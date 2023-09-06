@@ -10,7 +10,7 @@ const registerUser = async (req, res) => {
         const existingUser = await User.findOne({ name: req.body.name });
     
         if (existingUser) {
-          return res.status(400).json({ error: 'User with the same name already exists' });
+           return res.status(400).json({ error: 'User with the same name already exists' });
         }
     
         // Create a new user

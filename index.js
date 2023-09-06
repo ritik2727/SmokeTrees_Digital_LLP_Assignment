@@ -4,11 +4,15 @@ import ConnectDB from "./backend/config/db.js";
 import colors from "colors";
 import userRoutes from "./backend/routes/userRoutes.js";
 
+import  cors from 'cors'; 
+
+
+
 dotenv.config();
 ConnectDB();
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
