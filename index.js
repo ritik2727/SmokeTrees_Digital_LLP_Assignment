@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import ConnectDB from "./backend/config/db.js";
 import colors from "colors";
+import userRoutes from "./backend/routes/userRoutes.js";
 
 dotenv.config();
 ConnectDB();
@@ -13,6 +14,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("API is running....");
 });
+
+app.use("/api/users",userRoutes);
 
 const PORT = process.env.PORT || 5000;
 
